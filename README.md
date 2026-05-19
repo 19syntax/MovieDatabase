@@ -21,16 +21,16 @@ A modern, responsive movie discovery application built with React, TypeScript, a
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](./screenshots/homepage.png)
+![Homepage](<img width="1366" height="1858" alt="homepage" src="https://github.com/user-attachments/assets/e9ce0c4e-d467-4051-b63c-212621800a39" />)
 
 ### Movie Details
-![Movie Details](./screenshots/movie-details.png)
+![Movie Details](<img width="1366" height="1105" alt="movie-details" src="https://github.com/user-attachments/assets/a9a8c780-be6d-467e-a6a6-fda298977244" />)
 
 ### Favorites Page
-![Favorites](./screenshots/favorites.png)
+![Favorites](<img width="1366" height="655" alt="favoritePage" src="https://github.com/user-attachments/assets/796fca2a-de18-4de9-8316-f7d21e755e92" />)
 
 ### Filters & Sorting
-![Filters](./screenshots/filters.png)
+![Filters](<img width="1366" height="1172" alt="filterAndSorting" src="https://github.com/user-attachments/assets/6607eeba-8d23-46bb-8b79-0e135e92a44b" />)
 
 ## 🛠️ Built With
 
@@ -43,8 +43,6 @@ A modern, responsive movie discovery application built with React, TypeScript, a
 - **Context API** - State management
 - **localStorage** - Data persistence
 
-
-<img width="1366" height="1858" alt="homepage" src="https://github.com/user-attachments/assets/e9ce0c4e-d467-4051-b63c-212621800a39" />
 
 ## 📁 Project Structure
 movie-database/
