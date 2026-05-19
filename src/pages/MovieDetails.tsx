@@ -7,6 +7,7 @@ import {
   formatCurrency,
   getYear,
 } from "../utils/helperFunctions";
+import { useFavourite } from "../context/Favourite";
 
 export default function MovieDetails() {
   const { id } = useParams<{ id: string }>();
@@ -15,6 +16,7 @@ export default function MovieDetails() {
   const [movie, setMovie] = useState<MovieDetailsType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { isFavourite, toggleFavourite } = useFavourite();
 
   useEffect(() => {
     async function loadMovieDetails() {
@@ -50,6 +52,8 @@ export default function MovieDetails() {
     loadMovieDetails();
   }, [id]);
 
+  const favourite = movie ? isFavourite(movie.id) : false;
+
   if (loading) {
     return <LoadingSkeleton />;
   }
@@ -78,7 +82,7 @@ export default function MovieDetails() {
     );
   }
 
-  const genres = movie.genres.map((genre) => genre.name).join(", ");
+  // const genres = movie.genres.map((genre) => genre.name).join(", ");
   const year = getYear(movie.release_date);
   const runtime = formatRuntime(movie.runtime);
   const rating = movie.vote_average.toFixed(1);
@@ -94,16 +98,25 @@ export default function MovieDetails() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 
                      transition-colors mb-6 focus:outline-none focus:ring-2 
                      focus:ring-blue-500 rounded px-2 py-1"
-          aria-label="Go back to previous page"
-        >
-          <span aria-hidden="true">←</span>
-          <span>Back</span>
-        </button>
+            aria-label="Go back to previous page"
+          >
+            <span aria-hidden="true">←</span>
+            <span>Back</span>
+          </button>
+
+          <button
+            onClick={() => toggleFavourite(movie.id)}
+            className="px-4 py-2 rounded-lg flex items-center gap-2"
+          >
+            {favourite ? "Remove from Favorites" : "Add to Favorites"}
+          </button>
+        </div>
 
         {movie.backdrop_path && (
           <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">

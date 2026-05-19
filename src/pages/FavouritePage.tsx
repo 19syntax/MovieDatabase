@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useFavourite } from "../context/Favourite";
 import type { Movie, MovieDetails } from "../types/Movie";
-import { getImageUrl, getMovieDetails } from "../services/tmdb";
+import { getMovieDetails } from "../services/tmdb";
 import { useNavigate } from "react-router-dom";
+import { MovieCard } from "../components/MovieCard";
 
 export const FavouritePage = () => {
-  const { favourite, removeFavourite, clearAll } = useFavourite();
+  const { favourite, clearAll } = useFavourite();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -40,6 +41,9 @@ export const FavouritePage = () => {
       </div>
     );
   }
+  const handleFavoriteDetail = (movie: Movie) => {
+    navigate(`/movie/${movie.id}`);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -74,44 +78,11 @@ export const FavouritePage = () => {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {movies.map((movie) => (
-              <div
-                className="relative bg-white rounded-lg shadow-md overflow-hidden cursor-pointer 
-                   transition-transform hover:scale-105 hover:shadow-xl"
-              >
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeFavourite(movie.id);
-                  }}
-                  className="absolute top-2 right-2 z-10 text-white rounded-full 
-                 w-8 h-8 flex items-center justify-center hover:scale-110
-                 transition-colors"
-                  aria-label="Remove from favorites"
-                >
-                  ❤️
-                </button>
-                <img
-                  src={getImageUrl(movie.poster_path, "w500")}
-                  alt={movie.title}
-                  className="w-full h-96 object-cover"
-                />
-
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2 line-clamp-2">
-                    {movie.title}
-                  </h3>
-
-                  <div className="flex items-center justify-between text-sm text-gray-600">
-                    <span>{new Date(movie.release_date).getFullYear()}</span>
-                    <div className="flex gap-2">
-                      <span className="flex items-center gap-1">
-                        ⭐ {movie.vote_average.toFixed(1)}
-                      </span>
-                      <span className="flex items-center gap-1"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                onClick={() => handleFavoriteDetail(movie)}
+              />
             ))}
           </div>
         )}
