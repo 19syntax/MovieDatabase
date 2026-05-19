@@ -2,7 +2,8 @@
 
 A modern, responsive movie discovery application built with React, TypeScript, and the TMDB API. Search thousands of movies, filter by genre, sort by various criteria, and save your favorites.
 
-![Movie Database Screenshot]()
+<img width="500" height="350" alt="homepage" src="https://github.com/user-attachments/assets/e9ce0c4e-d467-4051-b63c-212621800a39" />
+
 
 ## ✨ Features
 
@@ -16,21 +17,21 @@ A modern, responsive movie discovery application built with React, TypeScript, a
 
 ## 🚀 Live Demo
 
-**[View Live Demo](https://your-movie-database.vercel.app)**
+**[View Live Demo](https://movie-database-eosin-omega.vercel.app/)**
 
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](<img width="300" height="300" alt="homepage" src="https://github.com/user-attachments/assets/e9ce0c4e-d467-4051-b63c-212621800a39" />)
+<img width="300" height="300" alt="homepage" src="https://github.com/user-attachments/assets/e9ce0c4e-d467-4051-b63c-212621800a39" />
 
 ### Movie Details
-![Movie Details](<img width="300" height="300" alt="movie-details" src="https://github.com/user-attachments/assets/a9a8c780-be6d-467e-a6a6-fda298977244" />)
+<img width="300" height="300" alt="movie-details" src="https://github.com/user-attachments/assets/a9a8c780-be6d-467e-a6a6-fda298977244" />
 
 ### Favorites Page
-![Favorites](<img width="300" height="300" alt="favoritePage" src="https://github.com/user-attachments/assets/796fca2a-de18-4de9-8316-f7d21e755e92" />)
+<img width="300" height="300" alt="favoritePage" src="https://github.com/user-attachments/assets/796fca2a-de18-4de9-8316-f7d21e755e92" />
 
 ### Filters & Sorting
-![Filters]<img width="300" height="300" alt="filterAndSorting" src="https://github.com/user-attachments/assets/6607eeba-8d23-46bb-8b79-0e135e92a44b" />
+<img width="300" height="300" alt="filterAndSorting" src="https://github.com/user-attachments/assets/6607eeba-8d23-46bb-8b79-0e135e92a44b" />
 
 ## 🛠️ Built With
 
